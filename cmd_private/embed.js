@@ -2,8 +2,9 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'embed',
-    description: "Création d'un embed.",
+    description: "Création d'un embed (post).",
     aliases: ['post', 'alert'],
+    cooldown: 15,
     guildOnly: true,
 
     execute(message) {

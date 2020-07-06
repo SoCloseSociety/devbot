@@ -1,5 +1,4 @@
 // A BOSSER : Ne detecte pas encore les autres dossiers de commandes. 
-
 module.exports = {
     name: 'reload',
     description: 'Rechargement d\'une commande! **!reload <command> **',

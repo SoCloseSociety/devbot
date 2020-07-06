@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'server',
     aliases: ['infos-server', 'soclose-server'],
-    description: 'Informations:',
+    description: 'Informations du serveur. ',
     guildOnly: true,
 
     execute(message) {
