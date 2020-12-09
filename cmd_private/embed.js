@@ -22,6 +22,6 @@ module.exports = {
         embed.setFooter('Design By SoClose', 'https://cdn.discordapp.com/attachments/685431451147436043/685431635184975881/SoClose.jpg');
 
         message.channel.send(embed);
-        channel.send(`L'utilisateur ${message.author} à invoqué la commande \`${this.name}\`.`);
+        // channel.send(`L'utilisateur ${message.author} à invoqué la commande \`${this.name}\`.`);
     }
 }

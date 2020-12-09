@@ -7,6 +7,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 
+
 // --------------------------------------------  LOGS ALERT  -------------------------------------------------//
 // Startup :
 client.once('ready', () => {
@@ -70,7 +71,7 @@ client.on('message', message => {
 
     const command = client.commands.get(commandName) ||
         client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName)); // Liaisons aliases commandes.
-    if (!command) return; // Si différent commands return. 
+    if (!command) return message.reply('Utilise `!help` pour découvrir les commandes.'); // Si différent commands return. 
 
     // --------------------------------------------  ARGUMENTS REPONSE ERROR  -------------------------------------------------//
     if (command.guildOnly && message.channel.type !== 'text') {
@@ -82,7 +83,7 @@ client.on('message', message => {
         if (command.usage) {
             reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``; // Usage infos commande.
         }
-        return message.channel.send(reply); // Réponse commande.
+        return message.channel.send(reply).then(message => message.delete(1000)); // Réponse commande.
     }
 
 
@@ -103,17 +104,19 @@ client.on('message', message => {
             return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
         }
     }
+    try {
+        command.execute(message, args);
+
+    } catch (error) {
+        console.error(error);
+        message.reply('Erreur Console').then(message.delete(1000));
+    }
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
 
     // --------------------------------------------  ARGUMENTS EXECUTION -------------------------------------------------//
-    // try {
-    //     command.execute(message, args);
-    // } catch (error) {
-    //     console.error(error);
-    //     message.reply('Erreur Console');
-    // }
+
 });
 
 
