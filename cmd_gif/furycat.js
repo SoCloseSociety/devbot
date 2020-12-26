@@ -1,14 +1,13 @@
 const { MessageAttachment } = require('discord.js');
 
-
 module.exports = {
-    name: 'rip',
-    description: 'Afficher le gif RIP.',
+    name: 'furycat',
+    description: 'Furycat GIF.',
     category: 'GIF',
     cooldown: 10,
 
     execute(message) {
-        const attachment = new MessageAttachment('https://i.imgur.com/w3duR07.png');
+        const attachment = new MessageAttachment('https://i.imgur.com/EmBC5F4.jpg');
         message.channel.send(attachment);
   },
 };

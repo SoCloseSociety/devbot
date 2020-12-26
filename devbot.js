@@ -84,21 +84,18 @@ client.on('message', message => {
 
     const command = client.commands.get(commandName) ||
         client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName)); // Liaisons aliases commandes.
-    if (!command) return message.reply('Utilise `!help` pour découvrir les commandes.'); // Si différent commands return. 
+    if (!command)  {
+        message.reply('Utilise `!help` pour découvrir les commandes.'); // Si différent commands return. 
+        return message.delete({ timeout: 5000 })
+    }
+     
 
     // --------------------------------------------  ARGUMENTS REPONSE ERROR  -------------------------------------------------//
     if (command.guildOnly && message.channel.type !== 'text') {
-        return message.reply('Seulement sur le serveur.'); // Exécution impossible en MP.
-    }
 
-    if (command.args && !args.length) {
-        let reply = `Aucun argument détécté, ${message.author}!`; // Si aucun arguments détecté.
-        if (command.usage) {
-            reply += `\nUsage: \`${prefix}${command.name} ${command.usage}\``; // Usage infos commande.
-        }
-        return message.channel.send(reply)
+         message.reply('Uniquement sur le serveur.'); // Exécution impossible en MP.
+        return message.delete({ timeout: 5000 })
     }
-
 
     // --------------------------------------------  TIMER et SPAM DÉCLÉRATION  -------------------------------------------------//
     if (!cooldowns.has(command.name)) {
@@ -117,16 +114,16 @@ client.on('message', message => {
             return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
         }
     }
-    try {
-        command.execute(message, args);
-
-    } catch (error) {
-        console.error(error);
-        message.reply('Erreur Console');
-    }
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
+   try {
+        command.execute(message, args);
+        message.delete({ timeout: 1000 })
+    } catch (error) {
+        console.error(error);
+       // message.reply('Erreur Console');
+    }
 });
 
 

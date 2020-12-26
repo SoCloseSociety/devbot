@@ -1,14 +1,13 @@
 const { MessageAttachment } = require('discord.js');
 
-
 module.exports = {
-    name: 'rip',
-    description: 'Afficher le gif RIP.',
+    name: 'flycat',
+    description: 'Flycat GIF.',
     category: 'GIF',
     cooldown: 10,
 
     execute(message) {
-        const attachment = new MessageAttachment('https://i.imgur.com/w3duR07.png');
+        const attachment = new MessageAttachment('https://f.hellowork.com/blogdumoderateur/2013/02/gif-anime.gif');
         message.channel.send(attachment);
   },
 };

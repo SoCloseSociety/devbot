@@ -1,14 +1,13 @@
 const { MessageAttachment } = require('discord.js');
 
-
 module.exports = {
-    name: 'rip',
-    description: 'Afficher le gif RIP.',
+    name: 'fuckoff',
+    description: 'Fuckoff GIF.',
     category: 'GIF',
     cooldown: 10,
 
     execute(message) {
-        const attachment = new MessageAttachment('https://i.imgur.com/w3duR07.png');
+        const attachment = new MessageAttachment('https://i.pinimg.com/originals/0b/8c/08/0b8c081b7b05dcc0aad6238856ea87d2.gif');
         message.channel.send(attachment);
   },
 };

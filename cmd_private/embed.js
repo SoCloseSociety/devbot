@@ -5,7 +5,6 @@ module.exports = {
     description: "Création d'un embed (post).",
     aliases: ['post', 'alert'],
     category: 'Private',
-    cooldown: 15,
     guildOnly: true,
 
     execute(message) {

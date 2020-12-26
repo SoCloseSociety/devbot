@@ -1,5 +1,4 @@
 const { prefix } = require('../config.json');
-const Discord = require('discord.js');
 
 module.exports = {
     name: 'help',
@@ -12,7 +11,8 @@ module.exports = {
         const data = [];
         const { commands } = message.client;
 
-        if (!message.member.roles.cache.find(r => r.name === "TEAMSO")) return message.channel.send('Permission refusé.')
+        if (message.member != null && !message.member.roles.cache.find(r => r.name === "TEAMSO"))
+         return message.channel.send('Permission refusé.')
         if (!args.length) {
             data.push('|--> Liste des commandes :');
             data.push(commands.map(command => command.name).join(' | '));
@@ -31,13 +31,6 @@ module.exports = {
 
         const name = args[0].toLowerCase();
         const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
-        let exampleEmbed = new Discord.MessageEmbed();
-
-        if (!command) {
-            // return message.reply('that\'s not a valid command!');
-            exampleEmbed.setDescription('La commande n\'existe pas!')
-            message.channel.send(exampleEmbed);
-        }
 
         data.push(`**Name:** ${command.name}`);
 
