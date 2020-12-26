@@ -4,6 +4,7 @@ module.exports = {
     name: 'newrole',
     description: "Création d'un nouveau role à un utilisateur.",
     aliases: ['addrole', 'bonus'],
+    category: 'Private',
     cooldown: 2,
     guildOnly: true,
 

@@ -7,11 +7,10 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 
-
 // --------------------------------------------  LOGS ALERT  -------------------------------------------------//
 // Startup :
 client.once('ready', () => {
-    console.log('Ready!');
+    console.log('❤️  DevBot is Online!');
 });
 
 
@@ -21,36 +20,50 @@ const commandFiles = fs.readdirSync('./cmd_public').filter(file => file.endsWith
 for (const file of commandFiles) {
     const command = require(`./cmd_public/${file}`); // Variable du dossier.
     client.commands.set(command.name, command);
+    console.log('✅ ',file);
 }
-
 // Liaison des commandes avec le dossier Private :
 const commandFiles1 = fs.readdirSync('./cmd_private').filter(file => file.endsWith('.js'));
 for (const file of commandFiles1) {
     const command = require(`./cmd_private/${file}`); // Variable du dossier.
     client.commands.set(command.name, command);
+    console.log('✅ ',file);
 }
-
 // Liaison des commandes avec le dossier Webhook :
 const commandFiles2 = fs.readdirSync('./cmd_webhook').filter(file => file.endsWith('.js'));
 for (const file of commandFiles2) {
     const command = require(`./cmd_webhook/${file}`); // Variable du dossier.
     client.commands.set(command.name, command);
+    console.log('✅ ',file);
 }
-
 // Liaison des commandes avec le dossier Commerce :
 const commandFiles3 = fs.readdirSync('./cmd_commerce').filter(file => file.endsWith('.js'));
 for (const file of commandFiles3) {
     const command = require(`./cmd_commerce/${file}`); // Variable du dossier.
     client.commands.set(command.name, command);
+    console.log('✅ ',file);
 }
-
 // Liaison des commandes avec le dossier Server :
 const commandFiles4 = fs.readdirSync('./cmd_server').filter(file => file.endsWith('.js'));
 for (const file of commandFiles4) {
     const command = require(`./cmd_server/${file}`); // Variable du dossier.
     client.commands.set(command.name, command);
+    console.log('✅ ',file);
 }
-
+// Liaison des commandes avec le dossier Gif :
+const commandFiles5 = fs.readdirSync('./cmd_gif').filter(file => file.endsWith('.js'));
+for (const file of commandFiles5) {
+    const command = require(`./cmd_gif/${file}`); // Variable du dossier.
+    client.commands.set(command.name, command);
+    console.log('✅ ',file);
+}
+// Liaison des commandes avec le dossier Maths :
+const commandFiles6 = fs.readdirSync('./cmd_maths').filter(file => file.endsWith('.js'));
+for (const file of commandFiles6) {
+    const command = require(`./cmd_maths/${file}`); // Variable du dossier.
+    client.commands.set(command.name, command);
+    console.log('✅ ',file);
+}
 
 // --------------------------------------------  ACCUEIL-USERS  -------------------------------------------------//
 // Création d'un événements d'accueil.
@@ -75,15 +88,15 @@ client.on('message', message => {
 
     // --------------------------------------------  ARGUMENTS REPONSE ERROR  -------------------------------------------------//
     if (command.guildOnly && message.channel.type !== 'text') {
-        return message.reply('Only on server.'); // Exécution impossible en MP.
+        return message.reply('Seulement sur le serveur.'); // Exécution impossible en MP.
     }
 
     if (command.args && !args.length) {
         let reply = `Aucun argument détécté, ${message.author}!`; // Si aucun arguments détecté.
         if (command.usage) {
-            reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``; // Usage infos commande.
+            reply += `\nUsage: \`${prefix}${command.name} ${command.usage}\``; // Usage infos commande.
         }
-        return message.channel.send(reply).then(message => message.delete(1000)); // Réponse commande.
+        return message.channel.send(reply)
     }
 
 
@@ -109,13 +122,10 @@ client.on('message', message => {
 
     } catch (error) {
         console.error(error);
-        message.reply('Erreur Console').then(message.delete(1000));
+        message.reply('Erreur Console');
     }
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-
-
-    // --------------------------------------------  ARGUMENTS EXECUTION -------------------------------------------------//
 
 });
 

@@ -5,6 +5,7 @@ module.exports = {
     name: 'vote',
     description: "Création d'un embed (post).",
     aliases: ['question', 'poll'],
+    category: 'Private',
     cooldown: 15,
     guildOnly: true,
 

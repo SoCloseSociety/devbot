@@ -5,6 +5,7 @@ module.exports = {
     aliases: ['update', 'rechargement'],
     guildOnly: true,
     args: true,
+    category: 'Server',
     cooldown: 5,
 
     execute(message, args) {

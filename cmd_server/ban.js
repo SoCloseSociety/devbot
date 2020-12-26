@@ -2,6 +2,7 @@ module.exports = {
     name: 'ban',
     description: 'Ban un membre.',
     guildOnly: true,
+    category: 'Server',
     cooldown: 10,
 
     execute(message) {

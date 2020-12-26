@@ -2,6 +2,7 @@ module.exports = {
     name: 'kick',
     description: 'Kick un membre.',
     guildOnly: true,
+    category: 'Server',
     cooldown: 10,
 
     execute(message) {

@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'server',
-    aliases: ['infos-server', 'soclose-server'],
-    description: 'Informations du serveur. ',
+    name: 'serverdate',
+    aliases: ['sd', 'serverd'],
+    description: 'Date d activitée du serveur.',
     category: 'Server',
     guildOnly: true,
 
@@ -12,11 +12,10 @@ module.exports = {
         const channel = message.channel.guild.channels.cache.find(ch => ch.id === '710149160795373618');
         let serverEmbed = new Discord.MessageEmbed()
         serverEmbed.setColor("RANDOM")
-            .setAuthor(message.author.username, message.guild.iconURL())
+            .setAuthor(message.guild.name, message.guild.iconURL())
             .setTitle(`${this.description}`)
             .setThumbnail(message.guild.iconURL())
-            .addFields({ name: 'Name:', value: message.guild.name, inline: true }, { name: 'Fondateur:', value: message.guild.name, inline: true }, { name: 'Utilisateurs:', value: message.guild.memberCount, inline: true })
-            .addFields({ name: 'Online:', value: message.guild.available, inline: true }, { name: 'ID Server:', value: message.guild.id, inline: true }, { name: 'Location:', value: message.guild.region, inline: true })
+            .setDescription("", message.guild.setTimestamp)
             .addField("Serveur créé le: ", message.guild.createdAt)
             .setTimestamp()
             .setFooter('Design By SoClose', 'https://cdn.discordapp.com/attachments/685431451147436043/685431635184975881/SoClose.jpg')

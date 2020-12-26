@@ -2,6 +2,7 @@ module.exports = {
     name: 'clear',
     aliases: ['delete', 'supp', 'prune'],
     description: 'Suppression message de 1 à 99 messages.',
+    category: 'Server',
     guildOnly: true,
 
     execute(message, args) {
