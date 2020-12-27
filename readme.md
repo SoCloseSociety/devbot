@@ -57,10 +57,9 @@ Découvre aussi tous nos réseaux sociaux sur lesquels nous sommes très actifs.
 [youtube]: https://youtube.com/
 [instagram]: https://instagram.com/socloseagency
 [linkedin]: https://www.linkedin.com/company/soclosedigital
-[introduction]: https://github.com/SoClosee/Telegram_ScrappingAdding_toGroup#introduction
-[installation]: https://github.com/SoClosee/Telegram_ScrappingAdding_toGroup#installation
-[Commencer]: https://github.com/SoClosee/Telegram_ScrappingAdding_toGroup#commencer
-[Obtenir de l'aide]: https://github.com/SoClosee/Telegram_ScrappingAdding_toGroup#obtenir-de-laide 
+[introduction]: https://github.com/SoCloseSociety/devbot#introduction
+[installation]: https://github.com/SoCloseSociety/devbot#installation
+[Obtenir de l'aide]: https://github.com/SoCloseSociety/devbot#obtenir-de-laide
 [Discord]: https://discord.gg/nmFv2U3yHK
 [Telegram]: https://t.me/soclosetv
 [SoClose Digital Consulting Team]: https://soclose.co
