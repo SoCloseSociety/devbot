@@ -4,7 +4,6 @@ Bot Discord.js V12 DevBot.
 ## Table des matières:
 * [Introduction]
 * [Installation]
-* [Commencer]
 * [Obtenir de l'aide]
 
 ## Introduction:
