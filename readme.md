@@ -1,5 +1,6 @@
 # SoBot Discord V12:
 Bot Discord.js V12 DevBot.
+Link Server: https://discord.gg/77rJGQ6JzV
 
 ## Table des matières:
 * [Introduction]
