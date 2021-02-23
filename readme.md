@@ -12,18 +12,18 @@ Bot Discord en Python. Permet d'intéragir avec les utilisateurs d'un serveur.
 * Python doit être installé sur votre système
 * Node doit être installé sur votre système 
 #### Fonctionnalités:
-* intéragir avec les commandes de devbot en  utilisant le préfix '!'.
+* intéragir avec les commandes de SoBot en  utilisant le préfix '!'.
 * Découvrez l'intégralité des commandes via '!help'.
 
 ## Installation:
 * Cloner le repositorie: 
 ```
-$ git clone https://github.com/soclosee/sobot.git
+$ git clone https://github.com/soclosesociety/sobot.git
 ``` 
 
 * Aller dans le dossier:
 ```
-$ cd devbot
+$ cd sobot
 ```
 
 * Installer les requirements: 
