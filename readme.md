@@ -18,7 +18,7 @@ Bot Discord en Python. Permet d'intéragir avec les utilisateurs d'un serveur.
 ## Installation:
 * Cloner le repositorie: 
 ```
-$ git clone https://github.com/soclosesociety/devbot.git
+$ git clone https://github.com/soclosee/sobot.git
 ``` 
 
 * Aller dans le dossier:
@@ -34,14 +34,14 @@ $ pip install discord.js
 
 * Run: 
 ```
-$ node devbot.js
+$ node main.js
 ``` 
 
 * !help pour découvrir toutes les commandes.
 
 
 ## Obtenir de l'aide:
-Pour plus d'information n'hesite pas à nous rejoindre sur [Discord] ou sur [Telegram]!  
+Pour plus d'information n'hesite pas à nous rejoindre sur nos réseaux sociaux!  
 Découvre aussi tous nos réseaux sociaux sur lesquels nous sommes très actifs. 
 <br>
 [SoClose Digital Consulting Team]
@@ -56,9 +56,6 @@ Découvre aussi tous nos réseaux sociaux sur lesquels nous sommes très actifs.
 [youtube]: https://youtube.com/
 [instagram]: https://instagram.com/socloseagency
 [linkedin]: https://www.linkedin.com/company/soclosedigital
-[introduction]: https://github.com/SoCloseSociety/devbot#introduction
-[installation]: https://github.com/SoCloseSociety/devbot#installation
-[Obtenir de l'aide]: https://github.com/SoCloseSociety/devbot#obtenir-de-laide
 [Discord]: https://discord.gg/nmFv2U3yHK
 [Telegram]: https://t.me/soclosetv
 [SoClose Digital Consulting Team]: https://soclose.co

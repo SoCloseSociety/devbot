@@ -1,4 +1,7 @@
 {
-    "prefix": "!",
-    "token": ""
-}
+    "token": "", 
+    "cooldown": "3", 
+    "bot_name": "SoClose" 
+
+    }
+    
